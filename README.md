@@ -8,6 +8,17 @@ Implementing postgres jsonb
 }
 ```
 
+#### Sample Data 
+```
+{
+    "data" : {
+        "name": "Someone",
+        "age": 44,
+        "address": "Mem"
+    }
+}
+```
+
 ### POST http://localhost:8080/save
 #### Request
 ```
