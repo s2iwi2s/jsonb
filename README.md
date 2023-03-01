@@ -43,3 +43,17 @@ EventLogDTO
 ```
 [EventLogDTO]
 ```
+
+### Object hash Sample code
+```
+    private static String getHash(Object object) throws IOException, NoSuchAlgorithmException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(object);
+        oos.flush();
+        MessageDigest md = MessageDigest.getInstance(HASH_ALGORITHM);
+        md.update(bos.toByteArray());
+        byte[] digest = md.digest();
+        return DatatypeConverter.printHexBinary(digest);
+    }
+```
